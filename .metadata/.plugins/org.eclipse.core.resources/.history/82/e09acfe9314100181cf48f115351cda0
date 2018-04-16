@@ -1,0 +1,11 @@
+package com.niit.backend.model;
+
+import javax.persistence.OneToOne;
+
+public class CartInfo {
+	private int id;
+	private double grandTotal;
+	@OneToOne
+	private Customer customer; //fk column customer
+	
+}

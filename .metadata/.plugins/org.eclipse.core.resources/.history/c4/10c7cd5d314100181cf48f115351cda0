@@ -1,0 +1,10 @@
+package com.niit.backend.model;
+
+import javax.persistence.OneToOne;
+
+public class Authorities {
+	private int id;
+	private String role;
+	@OneToOne
+	private User user;
+}

@@ -1,0 +1,11 @@
+package com.niit.backend.model;
+
+import javax.persistence.OneToOne;
+
+public class User {
+	private String email;
+	private String password;
+	private boolean enabled;
+	@OneToOne
+	private Customer customer;
+}

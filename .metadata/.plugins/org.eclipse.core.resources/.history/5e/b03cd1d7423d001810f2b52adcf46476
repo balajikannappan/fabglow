@@ -1,0 +1,30 @@
+package com.niit.middleend.dao;
+
+public class SupplierDaoImpl implements SupplierDao{
+
+	public boolean addSupplier(SupplierInfo supplierInfo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void Supplier(SupplierInfo supplierInfo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean deleteSupplier(SupplierInfo supplierInfo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public SupplierInfo getSupplier(int supplierId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<com.niit.middleend.dao.Supplier> listCategories() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

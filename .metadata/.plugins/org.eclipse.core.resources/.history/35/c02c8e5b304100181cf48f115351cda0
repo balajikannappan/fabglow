@@ -1,0 +1,8 @@
+package com.niit.backend.model;
+
+public class CartInfo {
+	private int id;
+	private double grandTotal;
+	private Customer customer;
+	
+}

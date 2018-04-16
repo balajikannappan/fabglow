@@ -1,0 +1,11 @@
+package com.niit.backend.model;
+
+public class BillingAddress {
+	private int id;
+	private String apartmentNo;
+	private String streetName;
+	private String city;
+	private String state;
+	private String country;
+	private String zipcode;
+}

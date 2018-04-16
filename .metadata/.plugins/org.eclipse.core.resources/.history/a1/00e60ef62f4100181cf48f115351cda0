@@ -1,0 +1,6 @@
+package com.niit.backend.model;
+
+public class Authorities {
+	private int id;
+	private String role;
+}
