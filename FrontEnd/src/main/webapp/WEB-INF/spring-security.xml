@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<security:http auto-config="true">
+<security:intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
+
+</security:http>
+ 
+ 
+ 
+ 
+ 
+ <!-- to be taken from cloud and updated -->

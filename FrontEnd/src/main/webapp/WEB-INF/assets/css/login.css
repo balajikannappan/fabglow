@@ -32,7 +32,7 @@ margin:3vw;
 line-height:2.5;
 
 }
-input{
+.inputbox{
 margin:0vw 0 1vw 2vw;
 padding: 12px 12px;
 width:36vw;
@@ -42,7 +42,7 @@ transition:border 0.5s ease-out;}
 input:focus{
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 
-input[type=submit]{
+.submitbox{
 background:linear-gradient(to bottom,#000000,#282424);
     border: none;
     color: white;

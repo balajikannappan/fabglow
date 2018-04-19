@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.niit.backend.model.Category;
 import com.niit.backend.model.ProductInfo;
 import com.niit.middleend.dao.ProductDao;
 
@@ -22,6 +23,23 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public ProductInfo getProduct(int id) {
 		return productDao.getProduct(id);
+	}
+
+	@Override
+	public void saveOrUpdateProduct(ProductInfo productInfo) {
+		productDao.saveOrUpdateProduct(productInfo);
+		
+	}
+
+	@Override
+	public void deleteProduct(int id) {
+		productDao.deleteProduct(id);
+		
+	}
+
+	@Override
+	public List<Category> getAllCategories() {
+		return productDao.getAllCategories();
 	}
 
 }

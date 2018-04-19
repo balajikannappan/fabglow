@@ -13,6 +13,9 @@
   <%@ include file="/WEB-INF/assets/css/navbarstyle.css" %>
   <%@ include file="/WEB-INF/assets/css/shopnav.css" %>
   
+  body {
+	background: linear-gradient(90deg, #e8e8e8, white);
+}
 </style>
 </head>
 <body>
@@ -41,10 +44,10 @@
   <td><a href='<c:url value="/all/getproduct/${p.productId }"></c:url>'> <span
 								class="glyphicon glyphicon-info-sign"></span></a>
 								
-	  <a href='<c:url value=""></c:url>'><span
+	  <a href='<c:url value="/admin/deleteproduct/${p.productId }"></c:url>'><span
 								class="glyphicon glyphicon-trash"></span></a>
 								
-	  <a href='<c:url value=""></c:url>'><span class="glyphicon glyphicon-pencil"></span></a>
+	  <a href='<c:url value="/admin/updateproduct/${p.productId }"></c:url>'><span class="glyphicon glyphicon-pencil"></span></a>
  </tr>
 </c:forEach>
  

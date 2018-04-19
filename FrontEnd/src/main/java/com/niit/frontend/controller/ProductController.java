@@ -2,14 +2,18 @@ package com.niit.frontend.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.backend.model.Category;
 import com.niit.backend.model.ProductInfo;
 import com.niit.middleend.service.ProductService;
 
@@ -32,6 +36,36 @@ public class ProductController {
 		
 	}
 	
+	@RequestMapping("/admin/getproductform")
+	public String getProductForm(Model model) {
+		List<Category> categories=productService.getAllCategories();
+		model.addAttribute("categories",categories);
+		model.addAttribute("newproduct",new ProductInfo());
+		
+		return "productform";
+	}
+	
+	@RequestMapping(value="/admin/saveproduct")
+	public String saveProduct(@ModelAttribute(name="newproduct") ProductInfo productInfo) {
+		productService.saveOrUpdateProduct(productInfo);
+		return "redirect:/all/getproducts";
+	}
+	@RequestMapping(value="/admin/deleteproduct/{id}")
+	public String deleteProduct(@PathVariable int id) {
+		productService.deleteProduct(id);
+		return "redirect:/all/getproducts"; 
+	}
+	@RequestMapping(value="admin/updateproduct/{id}")
+	public ModelAndView updateproductform(@PathVariable int id) {
+		ProductInfo product=productService.getProduct(id); //get the product to pre-fill in the form
+		return new ModelAndView("updateproductform","updateproductvar",product);
+	}
+	
+	@RequestMapping(value="admin/update")
+	public String updateproduct(@ModelAttribute(name="updateproductvar") ProductInfo productInfo ) {
+		productService.saveOrUpdateProduct(productInfo);
+		return "redirect:/all/getproducts";
+	}
 	/*@RequestMapping(value="all/searchbycategory")
 	public String searchByCategory(@RequestParam String searchCondition,Model model) {
 		model.addAttribute("searchCondition",searchCondition);

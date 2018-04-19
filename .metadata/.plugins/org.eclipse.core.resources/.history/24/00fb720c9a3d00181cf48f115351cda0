@@ -1,5 +1,0 @@
-package com.niit.middleend.dao;
-
-public class ProductDaoImpl implements ProductDao{
-	
-}

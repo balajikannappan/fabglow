@@ -30,6 +30,7 @@
         <li><a href='<c:url value="/about"></c:url>'>About</a></li>
         <li><a href='<c:url value="/projects"></c:url>'>Projects</a></li>
         <li><a href='<c:url value="/contact"></c:url>'>Contact</a></li>
+        <li><a href='<c:url value="/all/regform"></c:url>'>signup</a></li>
 		<li><form class="navbar-form navbar-left">
           <div class="input-group">
 		  <input type="text" class="form-control" placeholder="Search for products...">

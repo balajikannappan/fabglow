@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=MiddleEnd/src\/main\/java&lt;com.niit.middleend.dao{ProductDao.java[ProductDao" modifiers="513" timestamp="1524041964372"/>
+<typeInfo handle="=MiddleEnd/src\/main\/java&lt;com.niit.middleend.service{ProductService.java[ProductService" modifiers="513" timestamp="1524042118261"/>
+<typeInfo handle="=MiddleEnd/src\/main\/java&lt;com.niit.middleend.service{CustomerService.java[CustomerService" modifiers="513" timestamp="1523938638583"/>
+<typeInfo handle="=BackEnd/C:\/Users\/USER\/.m2\/repository\/org\/springframework\/spring-web\/5.0.4.RELEASE\/spring-web-5.0.4.RELEASE.jar&lt;org.springframework.http.codec(CodecConfigurer$CustomCodecs.class[CustomCodecs" modifiers="1545" timestamp="1522657370127"/>
+</typeInfoHistroy>

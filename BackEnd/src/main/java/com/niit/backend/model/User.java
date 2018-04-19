@@ -1,7 +1,11 @@
 package com.niit.backend.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -12,9 +16,10 @@ public class User {
 	private boolean enabled;
 	@OneToOne(mappedBy="user")
 	private Customer customer;
-	@OneToOne(mappedBy="user") //because the owning entity is authorites and it uses the variable name user
+	@OneToOne(mappedBy="user",cascade=CascadeType.ALL) //because the owning entity is authorites and it uses the variable name user
 	private Authorities authorities;
-	
+	/*@OneToMany (mappedBy="user")        //owning entity is cartitem so add mapped by in user
+	private List<CartItem> cartItems;*/
 	public String getEmail() {
 		return email;
 	}
@@ -45,4 +50,9 @@ public class User {
 	public void setAuthorities(Authorities authorities) {
 		this.authorities = authorities;
 	}
+	
+	/* email password enabled cartitemid --> this structure is not possible because we have many cartitem ids but single user object
+	 * so we go for cartitemid quantity price user_email
+	 * only one entity can be owning entity
+	 */
 }

@@ -3,6 +3,7 @@ package com.niit.backend.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,14 +16,14 @@ public class Customer {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String firstName,lastName,phoneNumber;
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)   //while object creation happens, object becomes alive only for customer, but not for the inner related objects. i.e., customer object persists, but user, billing address etc are freshers..(transient types).. so we need to 'cascade' the operations that are happening to customer over the inner references also 
 	// if new name required for this column, add 'joincolumn' entity
 	private User user;
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private BillingAddress billingAddress;
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private ShippingAddress shippingAddress;
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private CartInfo cartinfo; //fk column cart_id
 	
 	public int getId() {
@@ -75,5 +76,9 @@ public class Customer {
 	}
 	
 	
+	//constructor
+	public Customer() {
+		System.out.println("customer object is created");
+	}
 	
 }

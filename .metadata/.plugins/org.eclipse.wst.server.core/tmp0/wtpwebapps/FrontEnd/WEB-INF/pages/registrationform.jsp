@@ -1,4 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ include file="/WEB-INF/views/navbar.jsp" %>
     <%@ include file="/WEB-INF/views/shopbarnav.jsp" %>
@@ -10,7 +10,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form modelAttribute="customer" action="">
+<c:url value="/all/registercustomer" var="url"></c:url>
+<form:form modelAttribute="customer" action="${url }"> <!-- give the action as given in the controller -->
 customer details
 <form:label path="id"></form:label>
 <form:hidden path="id" />
@@ -27,13 +28,13 @@ customer details
 
 <b>Billing Address</b>
 <form:label path="billingaddress.apartmentNo"></form:label>
-<form:input path="billingaddress.apartmentNo" />
+<form:input path="billingaddress." />
 <br>
 
-<form:label path="billingaddress."></form:label>
-<form:input path="billingaddress." />
+<form:label path=""></form:label>
+<form:input path="" />
 <br>
 </form:form>
 
 </body>
-</html> --%>
+</html>

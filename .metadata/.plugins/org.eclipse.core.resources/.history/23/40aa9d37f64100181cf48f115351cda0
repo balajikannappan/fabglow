@@ -1,0 +1,5 @@
+package com.niit.middleend.service;
+
+public interface CustomerService {
+
+}

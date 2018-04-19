@@ -1,20 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ include file="/WEB-INF/views/navbar.jsp" %>
+     <%@ include file="/WEB-INF/views/shopbarnav.jsp" %>
 <html>
 <head>
 <title>Login</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="shortcut icon" type="image/x-icon" href="<c:url value="/assets/images/icon.png" />" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
 
 <style>
 <%@ include file="/WEB-INF/assets/css/login.css" %>
+<%@ include file="/WEB-INF/assets/css/shopnav.css" %>
+  <%@ include file="/WEB-INF/assets/css/navbarstyle.css" %>
 
 </style></head>
 <body>

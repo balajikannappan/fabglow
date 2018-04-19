@@ -1,0 +1,64 @@
+package com.niit.frontend.controller;
+
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.niit.backend.model.ProductInfo;
+import com.niit.middleend.service.ProductService;
+
+@Controller
+public class ProductController {
+
+	@Autowired
+	private ProductService productService;
+	@RequestMapping("/all/getproducts")
+	public ModelAndView getAllProducts() {
+		List<ProductInfo> products=productService.getAllProducts();
+		return new ModelAndView("productlist","productsvar",products);
+	}
+	
+	@RequestMapping("/all/getproduct/{id}")
+	public ModelAndView getProduct(@PathVariable int id) {
+		System.out.println("the id is "+id);
+		ProductInfo product=productService.getProduct(id);
+		return new ModelAndView("productdetails","productdet",product);
+		
+	}
+	
+	@RequestMapping("/admin/getproductform")
+	public ModelAndView getProductForm() {
+		
+		return new ModelAndView("productform","newproduct",new ProductInfo());
+	}
+	
+	@RequestMapping(value="/admin/saveproduct")
+	public String saveProduct(@ModelAttribute(name="newproduct") ProductInfo productInfo) {
+		productService.saveOrUpdateProduct(productInfo);
+		return "redirect:/all/getproducts";
+	}
+	@RequestMapping(value="/admin/deleteproduct/{id}")
+	public String deleteProduct(@PathVariable int id) {
+		productService.deleteProduct(id);
+		return "redirect:/all/getproducts"; 
+	}
+	@RequestMapping(value="admin/updateproduct/{id}")
+	public String updateproduct(@PathVariable int id) {
+		Product product=productService.getProduct(id); //get the product to pre-fill in the form
+		return new ModelAndView("updateproductform","updateproductvar",product);
+	}
+	/*@RequestMapping(value="all/searchbycategory")
+	public String searchByCategory(@RequestParam String searchCondition,Model model) {
+		model.addAttribute("searchCondition",searchCondition);
+		List<ProductInfo> products=
+	}*/
+}

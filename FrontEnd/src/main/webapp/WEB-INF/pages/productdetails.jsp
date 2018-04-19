@@ -18,9 +18,16 @@
 <div class="container">
 <div class="row">
 </div>
-<div class="col-md-3 jumbotron">hello all dfadkadjndaljcn kjdnckadjsnfekj kjndkjdn kjndkfjnadskjnf ckjdnjkndf</div>
-<div class="col-md-6" style="background:red;margin-top:20px;">
-hello moto
+<div class="col-md-3"></div>
+<div class="col-md-6" style="margin-top:20px;">
+  <div class="panel panel-default">
+    <div class="panel-heading">${productdet.productName }</div>
+    <div class="panel-body">
+    ${productdet.productDescription }<br>
+    ${productdet.productQuantity }<br>
+    ${productdet.price }
+    </div>
+  </div>
 </div>
 <div class="col-md-3"></div>
 

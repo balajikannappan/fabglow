@@ -1,0 +1,22 @@
+package com.niit.middleend.dao;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.niit.backend.model.Customer;
+
+@Repository
+@Transactional
+public class CustomerDaoImpl implements CustomerDao {
+	@Autowired
+	private SessionFactory sessionFactory;
+	@Override
+	public void registerCustomer(Customer customer) {
+		Session session=
+		
+	}
+	
+}

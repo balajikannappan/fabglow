@@ -4,7 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,12 +17,18 @@ public class ProductInfo {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int productId;
+	@NotEmpty(message="Product Name cannot be blank")
 	private String productName;
+	@Min(value=1,message="minimum quantity must be 1")
 	private int productQuantity;
+	@NotEmpty(message="Product Name cannot be blank")
 	private String productDescription;
+	@Min(value=10,message="minimum price must be  10")
 	private double price;
-	/*
-	 * private Category category; private SupplierInfo supplierInfo;
+	@ManyToOne
+	@JoinColumn(name="cid")
+	private Category category;
+	 /*  private SupplierInfo supplierInfo;
 	 */
 
 	/*
@@ -101,20 +111,20 @@ public class ProductInfo {
 	/**
 	 * @return the category
 	 */
-	/*
-	 * public Category getCategory() { return category; }
-	 *//**
+	
+	  public Category getCategory() { return category; }
+	 /**
 		 * @param category
 		 *            the category to set
 		 */
-	/*
-	 * public void setCategory(Category category) { this.category = category; }
-	 *//**
+	
+	  public void setCategory(Category category) { this.category = category; }
+	 /**
 		 * @return the supplierInfo
 		 */
-	/*
-	 * public SupplierInfo getSupplierInfo() { return supplierInfo; }
-	 *//**
+	
+	/* public SupplierInfo getSupplierInfo() { return supplierInfo; }
+	 /**
 		 * @param supplierInfo
 		 *            the supplierInfo to set
 		 *//*
