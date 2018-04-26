@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ include file="/WEB-INF/views/navbar.jsp" %>
+     
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+  
+   /*--adding css files--*/
+  <%@ include file="/WEB-INF/assets/css/navbarstyle.css" %>
+ 
+  .jumbotron{
+  margin-top:20px;
+  }
+  
+  .jumbotron h3{
+  font-family:segoe ui;
+  }
+  
+  .well{
+  background:white;
+  }
+  
+  
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+  <div class="jumbotron"><h3 align="center">UPDATE PRODUCT</h3></div>
+  <div class="well">
+    <c:url value="/admin/update" var="url"></c:url>
+	<form:form action='${url }' modelAttribute="updateproductvar" role="form">
+	  <form:hidden path="productId" />
+      <div class="form-group">
+		  <form:label path="productName">Enter product Name</form:label>
+		  <!-- product.setProductname('Pen') -->
+		  <form:input path="productName" class="form-control" />
+		  <form:errors path="productName" cssStyle="color:red"></form:errors>
+ 	  </div>
+	  <div class="form-group">
+		<form:label path="productDescription">Enter ProductDescription</form:label>
+		<!-- product.setProductDescription('.....') -->
+		<form:textarea path="productDescription"  class="form-control" />
+		<form:errors path="productDescription" cssStyle="color:red"></form:errors>
+      </div>
+      <div class="form-group">
+		<form:label path="productQuantity">Enter Quantity</form:label>
+		<!-- product.setQuantity(12) -->
+		<form:input path="productQuantity" class="form-control" />
+		<form:errors path="productQuantity" cssStyle="color:red"></form:errors>
+	  </div>
+	  <div class="form-group">
+		<form:label path="price">Enter Price</form:label>
+		<!-- product.setPrice(..) -->
+		<form:input path="price" class="form-control" />
+		<form:errors path="price" cssStyle="color:red"></form:errors>
+	  </div>
+	  <div class="form-group">
+		<form:select path="category.catId">
+		<c:forEach items="${categories}" var ="c">
+		<form:option value="${c.catId}">${c.catName}</form:option>
+		</c:forEach>
+		</form:select>		
+	 </div>
+      <input type="submit" class="btn btn-lg btn-info" value="Edit Product">
+      
+	</form:form>
+  </div>
+  </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+
+</body>
+</html>

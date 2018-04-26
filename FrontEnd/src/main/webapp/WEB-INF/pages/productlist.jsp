@@ -6,16 +6,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<script>
+$(document).ready(function() {
+	var searchCondition = '${searchCondition}';
+	$('#mytable').DataTable({
+	"lengthMenu" : [ [  5, 7, -1 ], [  5, 7, "All" ] ],
+	"oSearch" : {
+	"sSearch" : searchCondition
+	}
+	})
+	});
+</script>
 <title>All Products</title>
 <style>
  /*--adding css files--*/
   <%@ include file="/WEB-INF/assets/css/navbarstyle.css" %>
   <%@ include file="/WEB-INF/assets/css/shopnav.css" %>
   
-  body {
-	background: linear-gradient(90deg, #e8e8e8, white);
-}
+ 
 </style>
 </head>
 <body>
@@ -25,9 +33,10 @@
 <div class="row">
 
 <div class="col-sm-12">
-<table class="table table-hover table-striped table-bordered" style="margin-top:30px">
+<table id="mytable" class="table table-hover table-striped table-bordered" style="margin-top:30px">
 <thead>
  <tr>
+	<th>image</th>
 	<th>product Name</th>
 	<th>Product Description </th>
 	<th>Price</th>
@@ -38,6 +47,7 @@
 <tbody>
 <c:forEach items="${productsvar }" var="p">
  <tr>
+  <td><center> <img class="no-resize" src="<c:url value="/assets/images/${p.productId }.png" />" alt="Image"></center></td>
   <td>${p.productName }</td>
   <td>${p.productDescription }</td>
   <td>${p.price }</td>

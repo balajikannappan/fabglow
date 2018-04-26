@@ -12,12 +12,16 @@ import javax.persistence.OneToOne;
 public class User {
 	@Id
 	private String email;
+	
 	private String password;
+	
 	private boolean enabled;
+	
 	@OneToOne(mappedBy="user")
 	private Customer customer;
-	@OneToOne(mappedBy="user",cascade=CascadeType.ALL) //because the owning entity is authorites and it uses the variable name user
-	private Authorities authorities;
+	
+	private String role;
+	
 	/*@OneToMany (mappedBy="user")        //owning entity is cartitem so add mapped by in user
 	private List<CartItem> cartItems;*/
 	public String getEmail() {
@@ -44,12 +48,13 @@ public class User {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public Authorities getAuthorities() {
-		return authorities;
+	public String getRole() {
+		return role;
 	}
-	public void setAuthorities(Authorities authorities) {
-		this.authorities = authorities;
+	public void setRole(String role) {
+		this.role = role;
 	}
+	
 	
 	/* email password enabled cartitemid --> this structure is not possible because we have many cartitem ids but single user object
 	 * so we go for cartitemid quantity price user_email

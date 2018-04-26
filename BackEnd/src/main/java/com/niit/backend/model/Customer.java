@@ -1,7 +1,7 @@
 package com.niit.backend.model;
 
 
-import java.util.Date;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -15,16 +15,24 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
 	private String firstName,lastName,phoneNumber;
-	@OneToOne(cascade=CascadeType.ALL)   //while object creation happens, object becomes alive only for customer, but not for the inner related objects. i.e., customer object persists, but user, billing address etc are freshers..(transient types).. so we need to 'cascade' the operations that are happening to customer over the inner references also 
-	// if new name required for this column, add 'joincolumn' entity
+	
+	@OneToOne(cascade=CascadeType.ALL)
 	private User user;
+	
+	//while object creation happens, object becomes alive only for customer, but not for the inner related objects. i.e., customer object persists, but user, billing address etc are freshers..(transient types).. so we need to 'cascade' the operations that are happening to customer over the inner references also 
+	// if new name required for this column, add 'joincolumn' entity
+	
 	@OneToOne(cascade=CascadeType.ALL)
 	private BillingAddress billingAddress;
+	
 	@OneToOne(cascade=CascadeType.ALL)
 	private ShippingAddress shippingAddress;
-	@OneToOne(cascade=CascadeType.ALL)
+	
+	/*@OneToOne(cascade=CascadeType.ALL)
 	private CartInfo cartinfo; //fk column cart_id
+	*/
 	
 	public int getId() {
 		return id;
@@ -68,13 +76,13 @@ public class Customer {
 	public void setShippingAddress(ShippingAddress shippingAddress) {
 		this.shippingAddress = shippingAddress;
 	}
-	public CartInfo getCartinfo() {
+	/*public CartInfo getCartinfo() {
 		return cartinfo;
 	}
 	public void setCartinfo(CartInfo cartinfo) {
 		this.cartinfo = cartinfo;
 	}
-	
+	*/
 	
 	//constructor
 	public Customer() {

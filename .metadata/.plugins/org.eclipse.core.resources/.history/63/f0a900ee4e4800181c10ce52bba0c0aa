@@ -1,0 +1,162 @@
+<script>
+ $(document).ready(function(){
+    $(".dropdown").hover(            
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');       
+        }
+    );
+});
+ </script>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+	 
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myShopbar">
+        <!-- hamburger icon -->
+		<span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      	  
+    </div>
+    <div class="collapse navbar-collapse" id="myShopbar">
+      <ul class="nav navbar-nav" id="shopbar">
+        <li class="dropdown dropdown-large">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">BULBS AND TUBES<b class="caret"></b></a>
+			<ul class="dropdown-menu dropdown-menu-large row">
+			  <li class="col-sm-4">
+			    <ul>
+				  <li class="dropdown-header">Bulbs</li>
+				  <li><a href="#">A Series</a></li>
+				  <li><a href="#">BR Series</a></li>
+				  <li><a href="#">LED's</a></li>
+				  <li><a href="#">CFL's</a></li>
+				  <li><a href="#">Special bulbs</a></li>
+				</ul>
+			  </li>
+			  <li class="col-sm-4">
+			    <ul>
+				  <li class="dropdown-header">Tubes</li>
+				  <li><a href="#">T8 Series</a></li>
+				  <li><a href="#">T5 Series</a></li>
+				  <li><a href="#">Decorative</a></li>
+				</ul>
+			  </li>
+			  <li class="col-sm-4">
+			    <ul>
+				  <li class="dropdown-header">Accessories</li>
+				  <li><a href="#">Sensors and Controls</a></li>
+				  <li><a href="#">Spares</a></li>
+				  <li><a href="#">Shades</a></li>
+				  <li><a href="#">Switches</a></li>
+				</ul>
+			  </li>
+			  </ul>
+		</li> <!-- each displayable element of navbar -->
+		<li class="dropdown dropdown-large">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">SHOP BY FIXTURE TYPE<b class="caret"></b></a>
+			<ul class="dropdown-menu dropdown-menu-large row">
+			  <li class="col-sm-3">
+			    <ul>
+				  <li class="dropdown-header">Ceiling</li>
+				  <li><a href="#">Pendant Lights</a></li>
+				  <li><a href="#">Recessed Lights</a></li>
+				  <li><a href="<c:url value="/all/searchbycategory?searchCondition=A series"></c:url>">Chandeliers</a></li>
+				  <li><a href="#">Hanging Lamps</a></li>
+				  <li class="dropdown-header">Cabinet</li>
+				  <li><a href="#">Light Strips</a></li>
+				  <li><a href="#">Sconce Lights</a></li>
+				</ul>
+			  </li>
+			  <li class="col-sm-3">
+			    <ul>
+				  <li class="dropdown-header">Wall</li>
+				  <li><a href="#">Sconce Lights</a></li>
+				  <li><a href="#">Accent Lights</a></li>
+				  <li><a href="#">Track Lights</a></li>
+				  <li class="dropdown-header">Floor</li>
+				  <li><a href="#">Corner Lamps</a></li>
+				  <li><a href="#">Shade Lamps</a></li>
+				  <li><a href="#">Floor-Chandelier Lights</a></li>
+				</ul>
+			  </li>
+			  <li class="col-sm-3">
+			    <ul>
+				  <li class="dropdown-header">Table</li>
+				  <li><a href="#">Arm Lamp</a></li>
+				  <li><a href="#">Gooseneck Lamps</a></li>
+				  <li><a href="#">Banker's Lamp</a></li>
+				  <li class="dropdown-header">Comfy Lamps</li>
+				  <li><a href="#">Solar Lamp</a></li>
+				  <li><a href="#">Clip Lights</a></li>
+				  <li><a href="#">USB Lights</a></li>
+				  <li><a href="#">Smart Lights</a></li>
+				</ul>
+			  </li>
+			  <li class="col-sm-3">
+			    <ul>
+				  <li class="dropdown-header">Decorative</li>
+				  <li><a href="#">Paper lanterns</a></li>
+				  <li><a href="#">String Lights</a></li>
+				  <li><a href="#">Lava Lamps</a></li>
+				  <li><a href="#">Night Lights</a></li>
+				  <li class="dropdown-header">Regional</li>
+				  <li><a href="#">Indian Origins</a></li>
+				  <li><a href="#">Chinese Collections</a></li>
+				  <li><a href="#">English Vintage</a></li>
+				</ul>
+			  </li>
+			</ul> <!-- end of dropdown menu-->
+		</li> <!-- each displayable element of navbar -->
+		<li class="dropdown dropdown-large">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">SHOP BY LOCALE<b class="caret"></b></a>
+			<ul class="dropdown-menu dropdown-menu-large row">
+			  <li class="col-sm-4">
+			    <ul>
+				  <li class="dropdown-header">Indoor</li>
+				  <li><a href="#">Bedroom</a></li>
+				  <li><a href="#">Living Room</a></li>
+				  <li><a href="#">Stairs</a></li>
+				  <li><a href="#">Bathroom</a></li>
+				  <li><a href="#">Kitchen</a></li>
+				  <li><a href="#">Dine area</a></li>
+				</ul>
+			  </li>
+			  <li class="col-sm-4">
+			    <ul>
+				  <li class="dropdown-header">Outdoor</li>
+				  <li><a href="#">Corridor</a></li>
+				  <li><a href="#">Garden</a></li>
+				  <li><a href="#">Around the House</a></li>
+				  <li><a href="#">Street</a></li>
+				  <li><a href="#">Flood lamps</a></li>
+				  
+				</ul>
+			  </li>
+			  <li class="col-sm-4">
+			    <ul>
+				  <li class="dropdown-header">Commercial</li>
+				  <li><a href="#">Office</a></li>
+				  <li><a href="#">Conference Rooms</a></li>
+				  <li><a href="#">Showrooms</a></li>
+				  <li><a href="#">Hotels and Restaurants</a></li>
+				  <li><a href="#">Ad boards</a></li>
+				  <li><a href="#">Large scale 'glow' solutions</a></li>
+				 
+				</ul>
+			  </li>
+			  
+			</ul> <!-- end of dropdown menu-->
+		</li> <!-- each displayable element of navbar -->
+		<li><a href='<c:url value="/all/getproducts"></c:url>'>BROWSE ALL PRODUCTS</a></li>
+		<li><a href='<c:url value="/admin/getproductform"></c:url>'>ADD PRODUCT</a></li>
+		 
+		</ul> <!--navbar's list of elements-->
+	</div> <!--collapse-->
+  </div> <!--container-fluid-->
+</nav> <!--navbar-->

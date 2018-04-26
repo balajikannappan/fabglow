@@ -13,9 +13,14 @@ public class Category {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int catId;
+	
 	private String catName;
+	
 	@OneToMany(mappedBy="category")
 	private List<ProductInfo> products;
+	
+	@OneToMany(mappedBy="category")
+	private List<SubCategory> subCategories;
 	
 	public int getCatId() {
 		return catId;
@@ -28,6 +33,18 @@ public class Category {
 	}
 	public void setCatName(String catName) {
 		this.catName = catName;
+	}
+	public List<ProductInfo> getProducts() {
+		return products;
+	}
+	public void setProducts(List<ProductInfo> products) {
+		this.products = products;
+	}
+	public List<SubCategory> getSubCategories() {
+		return subCategories;
+	}
+	public void setSubCategories(List<SubCategory> subCategories) {
+		this.subCategories = subCategories;
 	}
 
 }

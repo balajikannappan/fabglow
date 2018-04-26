@@ -35,7 +35,7 @@
   <div class="jumbotron"><h3 align="center">ADD PRODUCT</h3></div>
   <div class="well">
     <c:url value="/admin/saveproduct" var="url"></c:url>
-	<form:form action='${url }' modelAttribute="newproduct" role="form">
+	<form:form action='${url }' modelAttribute="newproduct" role="form" enctype="multipart/form-data">
 	  <form:hidden path="productId" />
       <div class="form-group">
 		  <form:label path="productName">Enter product Name</form:label>
@@ -62,11 +62,26 @@
 		<form:errors path="price" cssStyle="color:red"></form:errors>
 	  </div>
 	  <div class="form-group">
+	  <form:label path="category.catId">Choose Category: <br></form:label>
 		<form:select path="category.catId">
 		<c:forEach items="${categories}" var ="c">
 		<form:option value="${c.catId}">${c.catName}</form:option>
 		</c:forEach>
 		</form:select>		
+        </div>
+        <div class="form-group">
+        <form:label path="subCategory.subCatId">Choose subCategory: <br></form:label>
+		<form:select path="subCategory.subCatId">
+		<c:forEach items="${sc }" var ="s">
+	<%-- <c:if test="${category.catId==s. } "> --%>
+		
+		<form:option value="${s.subCatId}">${s.subCatName}</form:option>
+		</c:forEach>
+		</form:select>		
+        </div>
+        <div class="form-group">
+		<form:label path="image">Upload Image</form:label>
+		<form:input type="file" path="image" />
         </div>
 	  <center>
       <input type="submit" class="btn btn-lg btn-info" value="Add Product"></center>

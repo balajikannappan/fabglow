@@ -17,23 +17,32 @@ public class ProductInfo {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int productId;
+	
 	@NotEmpty(message="Product Name cannot be blank")
 	private String productName;
+	
 	@Min(value=1,message="minimum quantity must be 1")
 	private int productQuantity;
+	
 	@NotEmpty(message="Product Name cannot be blank")
 	private String productDescription;
+	
 	@Min(value=10,message="minimum price must be  10")
 	private double price;
+	
 	@ManyToOne
 	@JoinColumn(name="cid")
 	private Category category;
+	
+	@ManyToOne
+	@JoinColumn(name="scid")
+	private SubCategory subCategory;
 	 /*  private SupplierInfo supplierInfo;
 	 */
 
-	/*
-	 * @Transient private MultipartFile image;
-	 */
+	
+	@Transient private MultipartFile image;
+	 
 	/**
 	 * @return the productId
 	 */
@@ -130,9 +139,17 @@ public class ProductInfo {
 		 *//*
 			 * public void setSupplierInfo(SupplierInfo supplierInfo) { this.supplierInfo =
 			 * supplierInfo; }
-			 * 
-			 * public MultipartFile getImage() { return image; } public void
-			 * setImage(MultipartFile image) { this.image = image; }
 			 */
+			  public MultipartFile getImage() { return image; } public void
+			  setImage(MultipartFile image) { this.image = image; }
+
+			public SubCategory getSubCategory() {
+				return subCategory;
+			}
+
+			public void setSubCategory(SubCategory subCategory) {
+				this.subCategory = subCategory;
+			}
+			 
 
 }

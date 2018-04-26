@@ -66,7 +66,7 @@
 				  <li class="dropdown-header">Ceiling</li>
 				  <li><a href="#">Pendant Lights</a></li>
 				  <li><a href="#">Recessed Lights</a></li>
-				  <li><a href="#">Chandeliers</a></li>
+				  <li><a href="<c:url value="/all/searchbycategory?searchCondition=chandelier"></c:url>">Chandeliers</a></li>
 				  <li><a href="#">Hanging Lamps</a></li>
 				  <li class="dropdown-header">Cabinet</li>
 				  <li><a href="#">Light Strips</a></li>

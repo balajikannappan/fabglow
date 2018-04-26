@@ -16,6 +16,7 @@
    /*--adding css files--*/
   <%@ include file="/WEB-INF/assets/css/shopnav.css" %>
   <%@ include file="/WEB-INF/assets/css/navbarstyle.css" %>
+  <%@ include file="/WEB-INF/assets/css/productcarousel.css" %>
   <%@ include file="/WEB-INF/assets/css/footer.css" %>
   
     /* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -62,7 +63,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img class="no-resize" src="<c:url value="/assets/images/13.jpg" />" alt="Image">
+        <img class="no-resize" src="<c:url value="/assets/images/one.jpg" />" alt="Image">
         <div class="carousel-caption">
           <h3></h3>
           <p></p>
@@ -70,14 +71,14 @@
       </div>
 
       <div class="item">
-        <img class="no-resize" src="<c:url value="/assets/images/69.jpg" />" alt="Image">
+        <img class="no-resize" src="<c:url value="/assets/images/two.jpg" />" alt="Image">
       
       </div>
 	  <div class="item">
-        <img class="no-resize" src="<c:url value="/assets/images/14.jpg" />" alt="Image" >
+        <img class="no-resize" src="<c:url value="/assets/images/three.jpg" />" alt="Image" >
       </div>
       <div class="item">
-        <img class="no-resize" src="<c:url value="/assets/images/15.jpg" />" alt="Image" >
+        <img class="no-resize" src="<c:url value="/assets/images/four.jpg" />" alt="Image" >
       </div>
     </div> <!-- carousel list end -->
 
@@ -92,6 +93,7 @@
     </a>
 </div>
   
+<%@ include file="/WEB-INF/views/productcarousel.jsp" %>  
 <div class="container text-center">    
   <h3>Today's Deals </h3><h4><a href="#">See all deals</a></h4><br>
   <div class="row">

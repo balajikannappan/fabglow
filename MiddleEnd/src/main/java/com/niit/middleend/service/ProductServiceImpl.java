@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.niit.backend.model.Category;
 import com.niit.backend.model.ProductInfo;
+import com.niit.backend.model.SubCategory;
 import com.niit.middleend.dao.ProductDao;
 
 @Service
@@ -40,6 +41,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<Category> getAllCategories() {
 		return productDao.getAllCategories();
+	}
+
+	@Override
+	public List<SubCategory> getAllSubCategories() {
+		return productDao.getAllSubCategories();
 	}
 
 }

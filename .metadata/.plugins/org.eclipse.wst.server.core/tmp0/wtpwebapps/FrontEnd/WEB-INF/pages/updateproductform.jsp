@@ -12,9 +12,7 @@
   
    /*--adding css files--*/
   <%@ include file="/WEB-INF/assets/css/navbarstyle.css" %>
-  body {
-	background: linear-gradient(90deg, #e8e8e8, white);
-}
+ 
   .jumbotron{
   margin-top:20px;
   }
@@ -38,7 +36,7 @@
   <div class="jumbotron"><h3 align="center">UPDATE PRODUCT</h3></div>
   <div class="well">
     <c:url value="/admin/update" var="url"></c:url>
-	<form:form action='${url }' modelAttribute="updateproductvar" role="form">
+	<form:form action='${url }' modelAttribute="updateproductvar" role="form" enctype="multipart/form-data">
 	  <form:hidden path="productId" />
       <div class="form-group">
 		  <form:label path="productName">Enter product Name</form:label>
@@ -64,7 +62,27 @@
 		<form:input path="price" class="form-control" />
 		<form:errors path="price" cssStyle="color:red"></form:errors>
 	  </div>
-      <input type="submit" class="btn btn-lg btn-info" value="Add Product">
+	  <div class="form-group">
+		<form:select path="category.catId">
+		<c:forEach items="${categories}" var ="c">
+		<form:option value="${c.catId}">${c.catName}</form:option>
+		</c:forEach>
+		</form:select>		
+	 </div>
+	 <div class="form-group">
+        <form:label path="subCategory.subCatId">Choose subCategory: <br></form:label>
+		<form:select path="subCategory.subCatId">
+		<c:forEach items="${sc }" var ="s">
+		<form:option value="${s.subCatId}">${s.subCatName}</form:option>
+		</c:forEach>
+		</form:select>		
+        </div>
+	 <div class="form-group">
+		<form:label path="image">Upload Image</form:label>
+		<form:input type="file" path="image" />
+        </div>
+      <input type="submit" class="btn btn-lg btn-info" value="Edit Product">
+      
 	</form:form>
   </div>
   </div>

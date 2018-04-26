@@ -6,8 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import com.niit.backend.model.Authorities;
 import com.niit.backend.model.CartInfo;
 import com.niit.backend.model.Customer;
 
@@ -24,18 +22,15 @@ public class CustomerDaoImpl implements CustomerDao {
 		//set enabled as true
 		
 		customer.getUser().setEnabled(true);
-		Authorities authorities=new Authorities();
-		authorities.setUser(customer.getUser()); //fk user email in authorities table
-		customer.getUser().setAuthorities(authorities);
+		//customer.getUser().setRole(role);
 		
 		//authorities has an object of user and user has an object of authorities
 		
-		CartInfo cartInfo=new CartInfo();
+		/*CartInfo cartInfo=new CartInfo();
 		customer.setCartinfo(cartInfo);
 		cartInfo.setCustomer(customer);
-		
+		*/
 		//
-		
 		session.save(customer);  //insert into customer values(...)
 		
 	}

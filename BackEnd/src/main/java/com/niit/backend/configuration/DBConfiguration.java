@@ -5,8 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-import com.niit.backend.model.Authorities;
 import com.niit.backend.model.BillingAddress;
 import com.niit.backend.model.CartInfo;
 import com.niit.backend.model.CartItem;
@@ -14,6 +12,8 @@ import com.niit.backend.model.Category;
 import com.niit.backend.model.Customer;
 import com.niit.backend.model.ProductInfo;
 import com.niit.backend.model.ShippingAddress;
+import com.niit.backend.model.SubCategory;
+import com.niit.backend.model.SupplierInfo;
 import com.niit.backend.model.User;
 
 import java.util.Properties;
@@ -55,7 +55,7 @@ public class DBConfiguration {
 		lsf.addProperties(hibernateProperties);
 		//An array of Class objects of all the entities
 		//Map all entities to relational table
-		Class classes[]=new Class[]{ProductInfo.class,Category.class,CartItem.class,Customer.class,User.class,Authorities.class,BillingAddress.class,ShippingAddress.class,CartInfo.class};
+		Class classes[]=new Class[]{SupplierInfo.class,SubCategory.class,ProductInfo.class,Category.class,CartItem.class,Customer.class,User.class,BillingAddress.class,ShippingAddress.class,CartInfo.class};
 		lsf.scanPackages("com.niit");
 		//localsesionfactorybuilder -> sessionfactory -> map all entities with relation table
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();

@@ -1,0 +1,131 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ include file="/WEB-INF/views/navbar.jsp" %>
+    <%@ include file="/WEB-INF/views/shopbarnav.jsp" %>
+     
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+  
+   /*--adding css files--*/
+  <%@ include file="/WEB-INF/assets/css/navbarstyle.css" %>
+  <%@ include file="/WEB-INF/assets/css/shopnav.css" %>
+ 
+  .jumbotron{
+  margin-top:20px;
+  }
+  
+  .jumbotron h3{
+  font-family:segoe ui;
+  }
+  
+  .well{
+  background:white;
+  }
+  #hr-style1 {
+	border: 0;
+	height: 1px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+  
+  <div class="well">
+   <c:url value="/all/registercustomer" var="url"></c:url>
+<form:form modelAttribute="customer" action="${url }"> <!-- give the action as given in the controller -->
+	  <div class="jumbotron"><h3 align="center">CUSTOMER DETAILS</h3></div>
+<form:label path="id"></form:label>
+<form:hidden path="id"/>
+
+
+<form:label path="firstName">Enter Firstname</form:label>
+<form:input path="firstName" id="firstName"/>
+
+
+<form:label path="lastName">Enter lastname</form:label>
+<form:input path="lastName" id="lastName" />
+
+
+<form:label path="phoneNumber">Enter phonenumber</form:label>
+<form:input path="phoneNumber" id="phoneNumber" />
+<hr id="hr-style1">
+ <div class="jumbotron"><h3 align="center">LOGIN DETAILS</h3></div>
+<form:label path="user.email">Enter Email </form:label>
+<form:input path="user.email" id="user.email"/>
+
+<form:label path="user.password">Enter password</form:label>
+<form:input path="user.password" type="password" id="user.password"/>
+<hr id="hr-style1">
+ <div class="jumbotron"><h3 align="center">BILLING ADDRESS DETAILS</h3></div>
+<form:label path="billingaddress.apartmentNo">Enter Apartmentnumber</form:label>
+<form:input path="billingaddress.apartmentNo" id="billingaddress.apartmentNo"/>
+
+<form:label path="billingaddress.streetName">Enter Streetname</form:label>
+<form:input path="billingaddress.streetName" id="billingaddress.streetName"/>
+
+<form:label path="billingaddress.city">Enter city</form:label>
+<form:input path="billingaddress.city" id="billingaddress.city"/>
+
+<form:label path="billingaddress.state">Enter State</form:label>
+<form:input path="billingaddress.state" id="billingaddress.state"/>
+
+<form:label path="billingaddress.country">Enter country</form:label>
+<form:input path="billingaddress.country" id="billingaddress.country"/>
+
+<form:label path="billingaddress.zipCode">Enter zipCode</form:label>
+<form:input path="billingaddress.zipCode" id="billingaddress.zipCode"/>
+
+<hr id="hr-style1">
+
+ <div class="jumbotron"><h3 align="center">SHIPPING ADDRESS DETAILS</h3></div>
+<!-- <label>
+Check this if billing address and shipping address are same</label>
+<input type="checkbox" onclick="fillShippingAddress(this.form)" id="shippingsame" > -->
+<form:label path="shippingaddress.apartmentNo">Enter Apartmentnumber</form:label>
+<form:input path="shippingaddress.apartmentNo" id="shippingaddress.apartmentNo"/>
+
+
+<form:label path="shippingaddress.streetName">Enter Streetname</form:label>
+<form:input path="shippingaddress.streetName" id="shippingaddress.streetName"/>
+
+
+<form:label path="shippingaddress.city">Enter city</form:label>
+<form:input path="shippingaddress.city" id="shippingaddress.city"/>
+
+
+<form:label path="shippingaddress.state">Enter State</form:label>
+<form:input path="shippingaddress.state" id="shippingaddress.state"/>
+
+
+<form:label path="shippingaddress.country">Enter country</form:label>
+<form:input path="shippingaddress.country" id="shippingaddress.country"/>
+
+
+<form:label path="shippingaddress.zipCode">Enter zipCode</form:label>
+<form:input path="shippingaddress.zipCode" id="shippingaddress.zipCode"/>
+
+<hr id="hr-style1">
+	  <center>
+      <input type="submit" class="btn btn-lg btn-info" value="SIGN UP"></center>
+	</form:form>
+  </div>
+  </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+
+</body>
+</html>
